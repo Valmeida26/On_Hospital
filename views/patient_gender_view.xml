@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<record id="action_male_patients" model="ir.actions.act_window">
+        <field name="name">Male Patients</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hospital.patient</field>
+        <!--esse field abaixo define uma pesquisa padrao para o menu-->
+        <field name="context">{'default_gender': 'male'}</field>
+        <field name="domain">[('gender', '=', 'male')]</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first male patient:
+            </p>
+        </field>
+    </record>
+     <menuitem id="male_patient"
+              name="Male"
+              parent="hospital_patient_root"
+              action="action_male_patients"
+              sequence="30"/>
+
+    <record id="action_female_patients" model="ir.actions.act_window">
+        <field name="name">Female Patients</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hospital.patient</field>
+        <!--esse field abaixo define uma pesquisa padrao para o menu-->
+        <field name="context">{'default_gender': 'female'}</field>
+        <field name="domain">[('gender', '=', 'female')]</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first female patient:
+            </p>
+        </field>
+    </record>
+     <menuitem id="female_patient"
+              name="Female"
+              parent="hospital_patient_root"
+              action="action_female_patients"
+              sequence="40"/>
+
+    <record id="action_alligator_patients" model="ir.actions.act_window">
+        <field name="name">Alligator Patients</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hospital.patient</field>
+        <!--esse field abaixo define uma pesquisa padrao para o menu-->
+        <field name="context">{'default_gender': 'alligator'}</field>
+        <field name="domain">[('gender', '=', 'alligator')]</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first alligator patient:
+            </p>
+        </field>
+    </record>
+     <menuitem id="alligator_patient"
+              name="Alligator Patient"
+              parent="hospital_patient_root"
+              action="action_alligator_patients"
+              sequence="40"/>
+</odoo>
